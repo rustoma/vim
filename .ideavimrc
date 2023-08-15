@@ -1,0 +1,17 @@
+source ~/.vimrc
+
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
+vnoremap z zz
+vnoremap z G Gzz
+
+vnoremap <C-d> <C-d>zz
+vnoremap <C-u> <C-u>zz
+vnoremap <C-f> <C-f>zz
+vnoremap <C-b> <C-b>zz

@@ -15,3 +15,10 @@ vnoremap <C-d> <C-d>zz
 vnoremap <C-u> <C-u>zz
 vnoremap <C-f> <C-f>zz
 vnoremap <C-b> <C-b>zz
+
+nmap <leader>f :action FindInPath<CR>
+nmap <leader>sf :action GotoFile<CR>
+nmap <leader>sh :action Find<CR>
+nmap <leader>sa :action SearchEverywhere<CR>
+nmap <leader>ra :action ReplaceInPath<CR>
+nmap <leader>rh :action Replace<CR>

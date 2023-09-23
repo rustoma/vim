@@ -3,18 +3,18 @@ source ~/.vimrc
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
+xnoremap p "_dP
 
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
-vnoremap z zz
-vnoremap z G Gzz
+nnoremap G Gzz
 
-vnoremap <C-d> <C-d>zz
-vnoremap <C-u> <C-u>zz
-vnoremap <C-f> <C-f>zz
-vnoremap <C-b> <C-b>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
 
 nmap <leader>f :action FindInPath<CR>
 nmap <leader>sf :action GotoFile<CR>
@@ -22,3 +22,10 @@ nmap <leader>sh :action Find<CR>
 nmap <leader>sa :action SearchEverywhere<CR>
 nmap <leader>ra :action ReplaceInPath<CR>
 nmap <leader>rh :action Replace<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+Plug 'preservim/nerdtree'
+let g:NERDTreeMapActivateNode="l"
+let g:NERDTreeMapJumpParent="h"

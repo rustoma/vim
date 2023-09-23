@@ -38,7 +38,44 @@ lvim.keys.visual_mode["d"] = '"_d'
 lvim.keys.normal_mode["D"] = '"_D'
 lvim.keys.visual_mode["<leader>d"] = '""d'
 lvim.keys.normal_mode["<leader>D"] = '""D'
+lvim.keys.visual_mode["p"] = '"_dP'
+lvim.keys.visual_mode["<leader>p"] = '""p'
 
 lvim.keys.normal_mode["<F9>"] = ":set ignorecase! ignorecase?"
 
 lvim.builtin.which_key.mappings["d"] = { '""d', 'Delete inside ""' }
+
+
+local util = require 'lspconfig.util'
+
+require('lspconfig').tsserver.setup({
+  root_dir = util.root_pattern('.git'),
+  init_options = {
+    preferences = {
+      importModuleSpecifierPreference = 'non-relative',
+      importModuleSpecifierEnding = 'minimal',
+    },
+  }
+})
+
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+}
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    command = "prettier",
+    filetypes = { "typescript", "typescriptreact", "scss" },
+  },
+}
+
+local code_actions = require "lvim.lsp.null-ls.code_actions"
+code_actions.setup {
+  {
+    exe = "eslint",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
+  },
+}

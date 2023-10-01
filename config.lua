@@ -45,6 +45,8 @@ lvim.keys.normal_mode["<F9>"] = ":set ignorecase! ignorecase?"
 
 lvim.builtin.which_key.mappings["d"] = { '""d', 'Delete inside ""' }
 
+lvim.keys.normal_mode["<leader><C-h>"] = "<cmd>diffget //2<CR>"
+lvim.keys.normal_mode["<leader><C-l>"] = "<cmd>diffget //3<CR>"
 
 local util = require 'lspconfig.util'
 
@@ -57,7 +59,6 @@ require('lspconfig').tsserver.setup({
     },
   }
 })
-
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
